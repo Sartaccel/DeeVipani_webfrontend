@@ -1,0 +1,351 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== PAGE BACKGROUND ===== */
+.register-page {
+  min-height: 100vh;
+ 
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+}
+
+.logoo {
+  height: 80px;
+  object-fit: contain;
+}
+
+.login-btn {
+  
+  background: #22c55e;
+  color: white;
+  padding: 15px 50px;
+  border-radius: 5px ;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+.arrow{
+    position: relative;
+    top: 1px;
+}
+.login-btn:hover {
+  background: #0b632b;
+  color: white;
+}
+
+/* ===== MAIN SPLIT CONTAINER ===== */
+.register-main {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+
+/* ===== LEFT SECTION (IMAGE) ===== */
+.left-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideFromLeft 1s ease-out;
+}
+
+.left-section img {
+  width: 75%;
+ 
+  object-fit: contain;
+  
+ 
+}
+
+/* ===== RIGHT SECTION (FORM) ===== */
+.right-section {
+  flex: 1;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* ===== FORM BOX ===== */
+.register-container {
+  width: 580px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  border: 2px solid green;
+  backdrop-filter: blur(10px);
+  height: auto;
+}
+
+.register-container h1 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #16a34a;
+}
+
+/* ===== INPUTS ===== */
+.register-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-container input {
+  width: 100%;
+  padding: 15px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.register-container input:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+/* ===== NAME ROW ===== */
+.name-row {
+  display: flex;
+  gap: 10px;
+}
+
+.name-row input {
+  width: 50%;
+  
+}
+
+/* ===== BUTTON ===== */
+.register-container button {
+  width: 100%;
+  padding: 12px;
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.register-container button:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+/* ===== TEXT LINK ===== */
+.register-container p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.register-container a {
+  color: #16a34a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-container a:hover {
+  text-decoration: underline;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes floatUpDown {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .register-main {
+    padding: 20px;
+  }
+
+  .register-container {
+    width: 90%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .register-main {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .left-section {
+    display: none; /* hide image */
+  }
+
+  .right-section {
+    width: 100%;
+  }
+
+  .register-container {
+    width: 95%;
+    margin: 20px 0;
+    padding: 25px;
+  }
+
+  .top-bar {
+    padding: 12px 20px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .login-btn {
+    padding: 6px 16px;
+    font-size: 14px;
+  }
+
+  .name-row {
+    flex-direction: column;
+  }
+
+  .name-row input {
+    width: 100%;
+  }
+}
+/* OTP Section */
+.otp-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.otp-subtext {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.otp-subtext strong {
+  color: #374151;
+}
+
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.otp-box {
+  width: 48px;
+  height: 52px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: #1a1a2e;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #f9fafb;
+}
+
+.otp-box:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  background: #fff;
+}
+
+.otp-box.filled {
+  border-color: #4f46e5;
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.otp-success {
+  color: #16a34a;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px;
+  background: #f0fdf4;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.resend-text {
+  font-size: 13px;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.resend-btn {
+  background: none;
+  border: none;
+  color: #4f46e5;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.resend-btn:disabled {
+  color: #9ca3af;
+  cursor: default;
+}
+
+.resend-btn:hover:not(:disabled) {
+  color: #4338ca;
+  text-decoration: underline;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 8px;
+}

@@ -1,0 +1,195 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== WRAPPER ===== */
+.nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+  padding: 20px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 2px solid rgb(229, 230, 222);
+  background: transparent;
+  backdrop-filter: blur(10px);
+
+  transition: all 0.4s ease;
+}
+
+/* ===== SCROLL EFFECT ===== */
+.nav-wrapper.scrolled {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.nav-wrapper.scrolled .navbar {
+  width: 95%;
+  max-width: 1300px;
+  padding: 18px 30px;
+  border-radius: 60px;
+
+  background: white;
+  backdrop-filter: blur(14px);
+  border-color: #0f172a;
+}
+
+/* ===== LOGO ===== */
+.logo img {
+  height: 45px;
+}
+
+/* ===== NAV LINKS ===== */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+/* 🔥 PUSH AUTH TO RIGHT */
+.nav-links .auth-buttons:first-of-type {
+  margin-left: auto;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: rgb(32, 88, 7);
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+}
+
+/* UNDERLINE EFFECT */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #69d31d;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* ===== AUTH BUTTONS ===== */
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-btn {
+  font-size: 22px;
+  color: rgb(32, 88, 7);
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.icon-btn:hover {
+  background: #3cc217;
+  color: #0f172a;
+  transform: scale(1.1);
+}
+
+/* ===== MENU TOGGLE ===== */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: rgb(13, 17, 13);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 18px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 100%;
+
+    background: white;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 0;
+
+    opacity: 0;
+    transform: translateY(-15px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 🔥 FIX: SHOW AUTH IN MENU */
+  .auth-buttons {
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  /* RESET AUTO MARGIN */
+  .nav-links .auth-buttons:first-of-type {
+    margin-left: 0;
+  }
+}
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  .logo img {
+    height: 40px;
+  }
+
+  .nav-links li a {
+    font-size: 15px;
+  }
+}
+
+/* ===== FLOAT ANIMATION ===== */
+@keyframes floatUpDown {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.hero-image {
+  animation: floatUpDown 3s ease-in-out infinite;
+}

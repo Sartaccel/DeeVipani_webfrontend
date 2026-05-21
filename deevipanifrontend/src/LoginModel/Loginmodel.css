@@ -1,0 +1,94 @@
+/* LoginModal.css
+   Wraps your existing Login page layout (.login-container, .left-side, .right-side, etc.)
+   inside a centered modal overlay — no duplicate style definitions needed.
+*/
+
+/* ── Overlay ── */
+.lm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(3px);
+  animation: lmFadeIn 0.2s ease;
+  padding: 16px;
+}
+
+@keyframes lmFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Wrapper card ── */
+.lm-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+  animation: lmSlideUp 0.25s ease;
+  width: 100%;
+  max-width: 750px;   /* same aspect ratio as your full-page login */
+}
+
+@keyframes lmSlideUp {
+  from { transform: translateY(28px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* ── Make .login-container behave as a block (not full-screen) inside modal ── */
+.lm-inner.login-container {
+  position: static !important;   /* override any fixed/absolute positioning */
+  min-height: unset !important;
+  height: auto !important;
+  width: 100% !important;
+  border-radius: 0 !important;   /* wrapper already has border-radius */
+  margin: 0 !important;
+}
+
+/* ── Close button ── */
+.lm-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 10;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+  line-height: 1;
+}
+.lm-close-btn:hover { background: rgba(255,255,255,0.35); }
+
+/* ── Extra tagline on left panel ── */
+.lm-tagline {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* ── Mobile: stack left/right vertically ── */
+@media (max-width: 560px) {
+  .lm-inner.login-container {
+    flex-direction: column !important;
+  }
+  .lm-inner .left-side {
+    padding: 20px 16px !important;
+    min-height: unset !important;
+  }
+  .lm-inner .right-side {
+    padding: 20px 16px !important;
+  }
+}

@@ -1,0 +1,312 @@
+/* ===== HOME SECTION ===== */
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;   /* start from top */
+  align-items: center;           /* center container horizontally */
+  padding: 120px 40px 40px;
+  background-color: rgb(244, 245, 244);
+}
+
+/* ===== CONTAINER ===== */
+.home-container {
+  
+  width: 100%;
+  max-width: 1400px;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* ===== LEFT ===== */
+.home-left {
+  align-items: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: slideFromLeft 1s ease-out;
+}
+
+.home-left h1 {
+  
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: rgb(26, 188, 28);
+}
+.home-left h2 {
+  
+  text-align: center;
+  margin-bottom: 20px;
+  
+}
+
+.home-left p {
+  text-align: center;
+  font-size: 20px;
+  color: #0d100b;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* ===== BUTTON ===== */
+.home-btn {
+  text-decoration: none;
+  padding: 15px 85px;
+  border: none;
+  background: #20cb20;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.home-btn:hover {
+  background: #16a34a;
+  transform: scale(1.05);
+}
+
+/* ===== RIGHT ===== */
+.home-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  animation: slideFromRight 1s ease-out;
+}
+
+.home-right img {
+  width: 100%;
+  max-width: 550px;
+}
+
+/* ===== IMAGE FLOAT ===== */
+.hero-image {
+  animation: floatUpDown 4s ease-in-out infinite;
+  filter: drop-shadow(0 20px 25px rgba(0,0,0,0.25));
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes floatUpDown {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  .home {
+    padding: 80px 20px 20px;
+  }
+
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-left h1 {
+    font-size: 32px;
+  }
+
+  .home-left p {
+    font-size: 16px;
+    margin: 0 auto 20px;
+  }
+
+  .home-right img {
+    max-width: 350px;
+  }
+}
+
+
+/* ===== FEATURES SECTION ===== */
+.features-container {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: stretch;
+ 
+  margin-top: 1%;
+  padding: 20px 40px;
+  flex-wrap: wrap; /* ✅ allows responsive wrapping */
+}
+
+/* ===== FEATURE BOX ===== */
+.feature-box {
+  flex: 1;
+  min-width: 250px; /* ✅ prevents shrinking */
+   border: 2px solid green;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
+  
+}
+
+.feature-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* ===== ICON + TITLE (FIRST LINE) ===== */
+.feature-box p:first-child {
+  text-align: center;
+  display: flex;              /* ✅ icon + text same line */
+  
+  gap: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+ 
+}
+
+/* ===== DESCRIPTION ===== */
+.feature-box p:nth-child(2) {
+  font-size: 16px;
+  text-align: center;
+  color: #2bcb20;
+  padding: 10px;
+  margin: 0;
+}
+
+/* ===== ICON ===== */
+.iconhome {
+  font-size: 36px;
+  color: #0fbf1b;
+  flex-shrink: 0;
+}
+
+/* ===== OPTIONAL CLASSES ===== */
+.feature-box .pp {
+  font-size: 28px;
+}
+
+.feature-box .ppp {
+  font-size: 24px;
+  color: #29ce16;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 992px) {
+  .feature-box {
+    flex: 1 1 45%; /* ✅ 2 per row */
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .features-container {
+    display: none;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .feature-box {
+    flex: 1 1 45%; /* ✅ 1 per row */
+  }
+
+  .feature-box p:first-child {
+    font-size: 16px;
+  }
+
+  .feature-box p:nth-child(2) {
+    font-size: 13px;
+  }
+
+  .iconhome {
+    font-size: 22px;
+  }
+}
+.whatsapp-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+/* Tooltip Text */
+.whatsapp-text {
+  background: #25d366;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 30px;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 500;
+
+  opacity: 0;
+  transform: translateX(20px);
+
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* WhatsApp Icon */
+.whatsapp-icon {
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-size: 32px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.whatsapp-container:hover .whatsapp-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.whatsapp-container:hover .whatsapp-icon {
+  transform: scale(1.1);
+}

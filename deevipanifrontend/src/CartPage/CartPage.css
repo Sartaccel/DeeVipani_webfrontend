@@ -1,0 +1,237 @@
+/* CartPage.css */
+
+.cp-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+/* ── Empty state ── */
+.cp-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+.cp-empty-icon {
+  font-size: 48px;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+.cp-empty-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.cp-empty-sub {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Header ── */
+.cp-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.cp-count {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 1.2rem;
+}
+
+/* ── Two-col layout ── */
+.cp-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 640px) {
+  .cp-layout { grid-template-columns: 1fr; }
+}
+
+/* ── Cart item card ── */
+.cp-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #fff;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+
+.cp-img {
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: #f5f5f5;
+}
+
+.cp-item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.cp-item-brand {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+.cp-item-name {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cp-item-variant {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.cp-price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cp-price {
+  font-size: 15px;
+  font-weight: 500;
+}
+.cp-mrp {
+  font-size: 12px;
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.cp-qty-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.cp-qty-btn {
+  width: 28px;
+  height: 28px;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  background: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.cp-qty-btn:hover { background: #f5f5f5; }
+.cp-qty-num {
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 20px;
+  text-align: center;
+}
+
+.cp-remove-btn {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #a32d2d;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+.cp-remove-btn:hover { background: #fcebeb; }
+
+.cp-item-total {
+  font-size: 15px;
+  font-weight: 500;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* ── Order summary panel ── */
+.cp-summary {
+  background: #fff;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  padding: 18px 20px;
+  position: sticky;
+  top: 1rem;
+}
+
+.cp-summary-title {
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin-bottom: 14px;
+}
+
+.cp-sum-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 9px;
+}
+.cp-sum-save span:last-child { color: #0f6e56; }
+.cp-free { color: #0f6e56 !important; font-weight: 500; }
+.cp-free-hint {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 10px;
+  margin-top: -4px;
+}
+
+.cp-sum-total {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+/* ── Buttons ── */
+.cp-checkout-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  background: #085041;
+  color: #e1f5ee;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+.cp-checkout-btn:hover { background: #0f6e56; }
+
+.cp-continue-btn {
+  width: 100%;
+  padding: 11px;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+.cp-continue-btn:hover { background: #f5f5f5; }
